@@ -8,21 +8,6 @@ namespace PlaywrightTests;
 [TestFixture]
 public class Tests : PageTest
 {
-    /* public override BrowserNewContextOptions ContextOptions()
-    {
-        var browserName = this.BrowserName;
-        Console.WriteLine($"Browser Name is {this.BrowserName}");
-
-        if (browserName is null)
-        {
-            return base.ContextOptions();
-        }
-        else
-        {
-            return new BrowserNewContextOptions(Playwright.Devices["Pixel 5"]);
-        }
-    } */
-
     [Test]
     public async Task HomepageHasPlaywrightInTitleAndGetStartedLinkLinkingtoTheIntroPage()
     {
@@ -42,6 +27,10 @@ public class Tests : PageTest
 
         // Expects the URL to contain intro.
         await Expect(Page).ToHaveURLAsync(new Regex(".*intro"));
+
+        await Expect(Page
+            .GetByRole(AriaRole.Heading, new() { Name = "Installation"}))
+            .ToBeVisibleAsync();
     }
 
     [Test]
