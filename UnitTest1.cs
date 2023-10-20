@@ -38,8 +38,6 @@ public class Tests : PageTest
     {
         await Page.GotoAsync("https://www.saucedemo.com/");
 
-        await Page.Locator("[data-test=\"username\"]").ClickAsync();
-
         await Page.Locator("[data-test=\"username\"]").FillAsync("standard_user");
 
         await Page.Locator("[data-test=\"username\"]").PressAsync("Tab");
