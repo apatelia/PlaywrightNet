@@ -40,8 +40,6 @@ public class Tests : PageTest
 
         await Page.Locator("[data-test=\"username\"]").FillAsync("standard_user");
 
-        await Page.Locator("[data-test=\"username\"]").PressAsync("Tab");
-
         await Page.Locator("[data-test=\"password\"]").FillAsync("secret_sauce");
 
         await Page.Locator("[data-test=\"login-button\"]").ClickAsync();
