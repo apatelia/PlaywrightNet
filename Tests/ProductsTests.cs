@@ -53,11 +53,11 @@ public partial class ProductsTests : PageTest
 
   [Test]
   public async Task LogOutShouldWork()
-    {
-      var header = new HeaderFragment(Page);
-      await header.LogOutAsync();
-      
-      var loginPage = new LoginPage(Page);
-      await Expect(loginPage.loginButton).ToBeVisibleAsync();
-    }
+  {
+    var header = new HeaderFragment(Page);
+    await header.LogOutAsync();
+
+    var loginPage = new LoginPage(Page);
+    await Expect(loginPage.loginButton).ToBeVisibleAsync();
+  }
 }
